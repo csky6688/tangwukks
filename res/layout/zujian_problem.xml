@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#E5E5E5"
+    >
+    
+    	<LinearLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:background="#ffffff"
+		     >
+    			<TextView
+			        android:id="@+id/textView4"
+			        android:layout_width="fill_parent"
+			        android:layout_height="35dip"
+			        android:layout_marginTop="10dp"
+			        android:gravity="left"
+			        android:drawableLeft="@android:drawable/ic_notification_overlay"
+			        android:text="问题描述"
+			        android:textColor="#000000"
+			        android:textSize="18sp" />
+    			
+    			
+	        	<TextView  
+	            android:id="@+id/edit_tip5"  
+	            android:layout_marginLeft="10dp"
+	            android:layout_marginRight="10dp"
+	            android:layout_marginBottom="10dp"
+	            android:layout_width="fill_parent"  
+	            android:layout_height="wrap_content"  
+	            android:text="灭火器是被出现了大的故障请尽快赶往现场进行修复的操作"
+		        android:textColor="#000000"
+		        android:textSize="16sp" /> 
+   		 </LinearLayout>
+	    
+    	<LinearLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="10dp"
+		    android:orientation="vertical"
+		    android:background="#ffffff"
+		     >
+    			<TextView
+			       
+			        android:layout_width="fill_parent"
+			        android:layout_height="35dip"
+			        android:layout_marginTop="10dp"
+			        android:gravity="left"
+			        android:drawableLeft="@android:drawable/ic_notification_overlay"
+			        android:text="现场图片"
+			        android:textColor="#000000"
+			        android:textSize="18sp" />
+    			
+    			<LinearLayout 
+    			     android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginTop="10dp"
+				    android:orientation="horizontal"
+				    android:background="#ffffff"
+    			    >
+    			     <!-- 
+    			     <ListView
+						    android:id="@+id/listview"
+						    android:layout_width="match_parent"
+						    android:layout_height="wrap_content"
+						    >
+	   	
+					</ListView>
+    			      -->
+    			        <ImageView
+					        android:id="@+id/iv_icon"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content" 
+					        android:background="@drawable/call_locate_blue"
+					        />
+					     <ImageView
+					        android:id="@+id/iv_icon"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content" 
+					        android:background="@drawable/call_locate_blue"
+					        />
+					     
+					      <ImageView
+					        android:id="@+id/iv_icon"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content" 
+					        android:background="@drawable/call_locate_blue"
+					        />			      
+    			      
+    			</LinearLayout>
+    	</LinearLayout>
+    	
+    	
+    	<LinearLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="10dp"
+		    android:orientation="vertical"
+		    android:background="#ffffff"
+		     >
+    			<TextView
+			        
+			        android:layout_width="fill_parent"
+			        android:layout_height="35dip"
+			        android:layout_marginTop="10dp"
+			        android:gravity="left"
+			        android:drawableLeft="@android:drawable/ic_notification_overlay"
+			        android:text="现场视频"
+			        android:textColor="#000000"
+			        android:textSize="18sp" />
+    			
+    			<LinearLayout 
+    			     android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginTop="10dp"
+				    android:orientation="horizontal"
+				    android:background="#ffffff"
+    			    >
+    			     
+    			     <SurfaceView 
+				        android:id="@+id/sv"
+				        android:layout_marginLeft="10dp"
+				        android:layout_width="80dp"
+				        android:layout_height="60dp"
+				        />
+    			     
+    			     <SurfaceView 
+				        android:id="@+id/sv"
+				        android:layout_marginLeft="10dp"				     
+				        android:layout_width="80dp"
+				        android:layout_height="60dp"
+				        />
+					<!-- 
+    			     <ListView
+						    
+						    android:layout_width="match_parent"
+						    android:layout_height="match_parent"
+						    >
+	   	
+					</ListView>
+    			      -->
+    			</LinearLayout>
+	        	
+    	</LinearLayout>
+    	
+    	<LinearLayout 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical"
+		    android:layout_marginTop="10dp"
+		    android:background="#ffffff"
+		     >
+    			<TextView
+			        
+			        android:layout_width="fill_parent"
+			        android:layout_height="35dip"
+			        android:layout_marginTop="10dp"
+			        android:gravity="left"
+			        android:drawableLeft="@android:drawable/ic_notification_overlay"
+			        android:text="处理意见"
+			        android:textColor="#000000"
+			        android:textSize="18sp" />
+    			
+	        		<TextView  
+			            android:id="@+id/edit_tip5"  
+			            android:layout_marginLeft="10dp"
+			            android:layout_marginRight="10dp"
+			            android:layout_marginBottom="10dp"
+			            android:layout_width="fill_parent"  
+			            android:layout_height="wrap_content"  
+			            android:text="灭火器是被出现了大的故障请尽快赶往现场进行修复的操作"
+				        android:textColor="#000000"
+				        android:textSize="16sp" /> 
+   		 </LinearLayout>
+	    
+    	
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    
+    <include layout="@layout/top"/>
+    
+    
+    <!-- <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+ -->
+    <!-- TabHost必须包含一个 TabWidget和一个FrameLayout -->
+
+      <LinearLayout
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical" 
+          >
+
+	         <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="巡检设备-灭火器02" 
+		        android:textSize="20dp"
+		        android:layout_gravity="center_horizontal"
+	        />
+	         
+	          <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="设备异常" 
+		        android:drawableLeft="@android:drawable/ic_delete"
+		        android:textColor="#ff0000"
+		        android:textSize="18dp"
+		        android:layout_gravity="center_horizontal"
+	        />
+	         
+      </LinearLayout> 
+      
+     <TabHost
+        android:id="@+id/myTabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <!-- TabWidget的id属性必须为 @android:id/tabs -->
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:orientation="horizontal" />
+
+            <!-- FrameLayout的id属性必须为 @android:id/tabcontent -->
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0" >
+
+                <include layout="@layout/zujian_problem" android:id="@+id/myinclude1"/>
+    	
+                 <include layout="@layout/zujian_equipinfo"  android:id="@+id/myinclude2"/>
+    	
+    	  <!-- 
+                <TextView
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Tab1 Contentdfdfdfdfdgfg" />
+
+                <TextView
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Tab2 Contentxxxxxxxxxxxxxxxx" /> 
+			--> 
+			
+				
+			
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+    
+     
+
+</LinearLayout>

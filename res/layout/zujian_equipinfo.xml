@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="设备名称：灭火器" 
+        android:textSize="15dp"
+        android:layout_gravity="center_horizontal"
+       />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="设备编码：4566512" 
+        android:textSize="15dp"
+        android:layout_gravity="center_horizontal"
+       />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="生产单位：都反对反对反对感" 
+        android:textSize="15dp"
+        android:layout_gravity="center_horizontal"
+       />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="出厂编号：3454549456DD" 
+        android:textSize="15dp"
+        android:layout_gravity="center_horizontal"
+       />
+	
+	
+</LinearLayout>

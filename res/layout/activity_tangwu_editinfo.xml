@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#E5E5E5"
+    >
+	
+    
+    <LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#E5E5E5"
+    >
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="#8866ff00"
+        android:gravity="center"
+        android:text="编辑信息"
+        android:textColor="#000000"
+        android:textSize="22sp" />
+   
+    
+		<EditText
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="18dip"
+        android:paddingLeft="20dp"
+        android:drawableRight="@android:drawable/btn_dialog"
+        android:background="#ffffff"
+        android:id="@+id/editinfo_username"
+        android:inputType="text" 
+        android:text="魏总管"
+        />
+    
+		<EditText
+	        android:layout_width="fill_parent"
+	        android:layout_height="40dp"
+	        android:layout_marginTop="18dip"
+	        android:paddingLeft="20dp"
+	        android:background="#ffffff"
+	        android:id="@+id/editinfo_username"
+	        android:inputType="text" 
+	        android:hint="请输入您的工号"
+	        />
+   		<EditText
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="18dip"
+        android:paddingLeft="20dp"
+        android:background="#ffffff"
+        android:id="@+id/editinfo_username"
+        android:inputType="text" 
+        android:hint="请输入您的所在单位"
+        />
+   		
+   			<EditText
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="18dip"
+        android:paddingLeft="20dp"
+        android:background="#ffffff"
+        android:id="@+id/editinfo_username"
+        android:inputType="text" 
+        android:hint="请输入您的手机号"
+        />
+	   
+   		 <Button 
+		       android:onClick="click"
+		       android:layout_width="fill_parent"
+		       android:layout_height="40dp"
+		        android:layout_marginTop="40dip"
+		       android:text="完成"
+		       android:textColor="#2A9355"
+		       android:background="#ffffff" 
+		       /> 	
+   			
+   		 <ImageView
+	            android:layout_width="156dp"
+	            android:layout_height="102dp"
+	            android:layout_weight="1" 
+	            android:layout_centerHorizontal="true"
+	            android:layout_gravity="center"
+	            android:src="@drawable/taillogo" />
+	        
+   		 
+		</LinearLayout>
+   		 
+         <LinearLayout
+             android:layout_width="fill_parent"
+             android:layout_height="50dp"
+             android:layout_marginBottom="0dip"
+             android:background="#000000"
+             android:orientation="horizontal"
+             android:paddingTop="10dp" 
+             android:layout_alignParentBottom="true"
+             >
+
+             <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1">
+	             <ImageView
+	                 android:layout_width="wrap_content"
+	                 android:layout_height="wrap_content"
+	                 android:layout_gravity="center_horizontal"
+	                 android:src="@drawable/history2" />
+	              <TextView
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:gravity="center"
+			        android:text="巡检记录"
+			        android:textColor="#ffffff"
+			        android:textSize="16sp" />
+   
+			</LinearLayout>
+			
+             <LinearLayout android:orientation="vertical"  android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"
+                 android:onClick="scanQr"
+                 >
+	             <ImageView
+	                 android:layout_width="wrap_content"
+	                 android:layout_height="wrap_content"
+	                 android:layout_gravity="center_horizontal"
+	                 android:layout_weight="1"
+	                 android:src="@drawable/xunjian3" />
+	             <TextView
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:gravity="center"
+			        android:text="立即巡检"
+			        android:textColor="#ffffff"
+			        android:textSize="16sp" />
+			</LinearLayout>
+			
+             <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"
+                  android:onClick="inspectTask"
+                 >
+	             <ImageView
+	                 android:layout_width="wrap_content"
+	                 android:layout_height="wrap_content"
+	                 android:layout_gravity="center_horizontal"
+	                 android:layout_weight="1"
+	                 android:src="@drawable/duty2" />
+	             <TextView
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:gravity="center"
+			        android:text="巡检任务"
+			        android:textColor="#ffffff"
+			        android:textSize="16sp" />
+			</LinearLayout>
+			
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1"
+                android:onClick="centerInfo"
+                >
+	             <ImageView
+	                 android:layout_width="wrap_content"
+	                 android:layout_height="wrap_content"
+	                 android:layout_gravity="center_horizontal"
+	                 android:layout_weight="1"
+	                 android:src="@drawable/personcenter2" />
+	             <TextView
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:gravity="center"
+			        android:text="个人中心"
+			        android:textColor="#ffffff"
+			        android:textSize="16sp" />
+	        </LinearLayout>
+         </LinearLayout>
+
+</RelativeLayout>
