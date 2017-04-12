@@ -32,7 +32,7 @@ import android.widget.Toast;
 
 
 @SuppressLint("NewApi")
-public class LoginActivity extends Activity {
+public class LoginActivity extends BaseActivity {
 	
 	protected TextView input_username = null;
 	protected TextView input_password = null;
@@ -40,7 +40,6 @@ public class LoginActivity extends Activity {
 	private Context context;
 	
 	// 用来保存参数的接口    
-	SharedPreferences sharedPreference; 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -48,16 +47,11 @@ public class LoginActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tangwu_login);
 		
-		context = this;
-		
 		input_username = (TextView) findViewById(R.id.input_username);
 		input_password = (TextView) findViewById(R.id.input_password);
 	
-		sharedPreference = context.getSharedPreferences("tangwukks", Context.MODE_PRIVATE);
 		
-				
-				
-		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+		/*if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
 		    // 详见StrictMode文档
 		    StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
 		            .detectDiskReads().detectDiskWrites().detectNetwork()
@@ -65,7 +59,7 @@ public class LoginActivity extends Activity {
 		    StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
 		            .detectLeakedSqlLiteObjects().detectLeakedClosableObjects()
 		            .penaltyLog().penaltyDeath().build());
-		}
+		}*/
 	}
 
 	public void loginToSystem(View view){
@@ -93,7 +87,7 @@ public class LoginActivity extends Activity {
 					Editor editor = sharedPreference.edit();
 					editor.putString("loginUser", userJson);
 					
-					Intent intent = new Intent(context,CenterActivity.class);
+					Intent intent = new Intent(LoginActivity.this,CenterActivity.class);
 					intent.putExtra("loginUser", user);
 					startActivity(intent);
 				}catch(Exception e){

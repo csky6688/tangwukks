@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class BarCodeTestActivity extends Activity {
+public class BarCodeTestActivity extends BaseActivity {
     *//** Called when the activity is first created. *//*
 	private TextView resultTextView;
 	private EditText qrStrEditText;

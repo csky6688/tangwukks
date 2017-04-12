@@ -1,17 +1,23 @@
 package com.esunward.inspectSystem;
 
+import org.json.JSONObject;
+
+import com.esunward.androidUtil.HttpUtil;
+import com.esunward.androidUtil.JsonUtils;
+import com.esunward.config.Global;
 import com.esunward.javabean.User;
 import com.itheima.mobilesafe.R;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class CenterActivity extends Activity {
+public class CenterActivity extends BaseActivity {
 private ImageView personface;  //人头像的图片
 	
 	private TextView loginUser_name_tv;
@@ -69,8 +75,41 @@ private ImageView personface;  //人头像的图片
 	 * @param view
 	 */
 	public void showInspectRecord(View view){
-		Intent intent = new Intent(CenterActivity.this,InspectRecordActivity.class);
-		startActivity(intent);
+		
+		
+		new Thread(new Runnable(){
+
+			@Override
+			public void run() {
+				try{
+					/*String jsonStr = "{'username':'"+username+"','password':'"+password+"'}";
+					
+					String encodeJsonStr = URLEncoder.encode(jsonStr,"UTF-8");
+					*/
+					String userJson = sharedPreference.getString("loginUser", "");
+					User user = JsonUtils.jsonStringToEntity(userJson, User.class);
+							
+					String responseJson = HttpUtil.androidHttpGetRequest("http://"+Global.connectionUrlLocation+"/jeeplus/mobille/showInspectorTask?userId="+user.getId());
+					/*
+					String userJson = new JSONObject(new JSONObject(responseJson).get("data").toString()).toString();
+					
+					user = JsonUtils.jsonStringToEntity(userJson, User.class);
+										
+					Editor editor = sharedPreference.edit();
+					editor.putString("loginUser", userJson);
+					*/
+					Intent intent = new Intent(CenterActivity.this,InspectRecordActivity.class);
+					//向下一个页面设置一点值	
+					intent.putExtra("loginUser", user);
+					
+					startActivity(intent);
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+			}
+		}).start();
+		
+		
 	}
 	
 	/**
@@ -86,6 +125,8 @@ private ImageView personface;  //人头像的图片
 	 * @param view
 	 */
 	public void inspectTask(View view){
+		
+		
 		Intent intent = new Intent(CenterActivity.this,InspectTaskActivity.class);
 		startActivity(intent);
 	}
@@ -94,9 +135,9 @@ private ImageView personface;  //人头像的图片
 	 * 个人中心
 	 * @param view
 	 */
-	public void centerInfo(View view){
+	/*public void centerInfo(View view){
 		Intent intent = new Intent(CenterActivity.this,CenterActivity.class);
 		startActivity(intent);
-	}
+	}*/
 	
 }

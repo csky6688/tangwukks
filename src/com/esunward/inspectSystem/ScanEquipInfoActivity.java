@@ -12,7 +12,7 @@ import android.view.View;
  * @author Administrator
  *
  */
-public class ScanEquipInfoActivity extends Activity {
+public class ScanEquipInfoActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub

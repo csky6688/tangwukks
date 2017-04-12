@@ -34,6 +34,48 @@ public class User implements Serializable{
 	
 	private String flag;  //这个状态是用于判断巡检员是否被分派了巡检任务
 	
+	
+	
+	//下面是新加的字段
+	protected String id;   //当前用户id
+	protected String remarks;	// 备注
+	protected Date createDate;	// 创建日期
+	protected Date updateDate;	// 更新日期
+
+	
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getRemarks() {
+		return remarks;
+	}
+
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
+
+	
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
 
 	public String getLoginName() {
 		return loginName;

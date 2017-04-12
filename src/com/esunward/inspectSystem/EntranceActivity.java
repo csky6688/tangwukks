@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 //Èë¿ÚµÄActivity
-public class EntranceActivity extends Activity {
+public class EntranceActivity extends BaseActivity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

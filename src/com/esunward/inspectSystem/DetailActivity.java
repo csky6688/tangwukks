@@ -16,7 +16,7 @@ import android.widget.TabHost;
 
 import com.itheima.mobilesafe.R;
 
-public class DetailActivity extends Activity   {
+public class DetailActivity extends BaseActivity   {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)

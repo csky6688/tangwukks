@@ -108,16 +108,18 @@ containing a value of this type.
         public static final int scanqr=0x7f020034;
         public static final int settings=0x7f020035;
         public static final int setup1=0x7f020036;
-        public static final int shape_selector=0x7f020037;
-        public static final int sysoptimize=0x7f020038;
-        public static final int taillogo=0x7f020039;
-        public static final int taskmanager=0x7f02003a;
-        public static final int trojan=0x7f02003b;
-        public static final int unlock=0x7f02003c;
-        public static final int widget_bg_portrait=0x7f02003d;
-        public static final int widget_bg_portrait_child=0x7f02003e;
-        public static final int widget_bg_portrait_child_divider=0x7f02003f;
-        public static final int xunjian3=0x7f020040;
+        public static final int shape=0x7f020037;
+        public static final int shape_selector=0x7f020038;
+        public static final int sysoptimize=0x7f020039;
+        public static final int taillogo=0x7f02003a;
+        public static final int taskmanager=0x7f02003b;
+        public static final int transparentbtn=0x7f02003c;
+        public static final int trojan=0x7f02003d;
+        public static final int unlock=0x7f02003e;
+        public static final int widget_bg_portrait=0x7f02003f;
+        public static final int widget_bg_portrait_child=0x7f020040;
+        public static final int widget_bg_portrait_child_divider=0x7f020041;
+        public static final int xunjian3=0x7f020042;
     }
     public static final class id {
         public static final int action_settings=0x7f0b0053;
