@@ -36,7 +36,6 @@ public class User implements Serializable{
 	
 	
 	
-	//下面是新加的字段
 	protected String id;   //当前用户id
 	protected String remarks;	// 备注
 	protected Date createDate;	// 创建日期

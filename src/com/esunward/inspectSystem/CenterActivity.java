@@ -1,10 +1,15 @@
 package com.esunward.inspectSystem;
 
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.util.List;
+
 import org.json.JSONObject;
 
 import com.esunward.androidUtil.HttpUtil;
 import com.esunward.androidUtil.JsonUtils;
 import com.esunward.config.Global;
+import com.esunward.javabean.Jinspecttask;
 import com.esunward.javabean.User;
 import com.itheima.mobilesafe.R;
 
@@ -112,10 +117,20 @@ private ImageView personface;  //ÈËÍ·ÏñµÄÍ¼Æ¬
 							
 					String responseJson = HttpUtil.androidHttpGetRequest("http://"+Global.connectionUrlLocation+"/jeeplus/mobille/showInspectorTask?userId="+user.getId());
 					
-					System.out.println(responseJson);
+					String responseJsonStr =  URLDecoder.decode(responseJson, "UTF-8");
+					
+
+					System.out.println(responseJsonStr);
+					
+					
+					List<Jinspecttask> jinspecttaskList = JsonUtils.jsonStringToList(responseJsonStr, Jinspecttask.class);
+					
+					for(Jinspecttask jinspecttask:jinspecttaskList){
+						System.out.println(jinspecttask.getInspectdescription()+"   "+jinspecttask.getInspectorname());
+					}
 					
 					Intent intent = new Intent(CenterActivity.this,InspectTaskActivity.class);
-					
+					intent.putExtra("jinspecttaskList", responseJsonStr);
 					startActivity(intent);
 					
 					/*
