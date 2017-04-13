@@ -9,7 +9,9 @@ import com.esunward.javabean.User;
 import com.itheima.mobilesafe.R;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +31,9 @@ private ImageView personface;  //人头像的图片
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
+		User user = (User) getIntent().getExtras().get("loginUser");
+		
 		setContentView(R.layout.activity_tangwu_ceter);
 		personface = (ImageView)findViewById(R.id.personface);
 		
@@ -36,7 +41,6 @@ private ImageView personface;  //人头像的图片
 		loginUser_no = (TextView) findViewById(R.id.loginUser_no);
 		loginUser_phone = (TextView) findViewById(R.id.loginUser_phone);
 		
-		User user = (User) getIntent().getExtras().get("loginUser");
 		loginUser_name_tv.setText(user.getName());
 		loginUser_no.setText(user.getNo());
 		loginUser_phone.setText(user.getPhone());
@@ -75,41 +79,8 @@ private ImageView personface;  //人头像的图片
 	 * @param view
 	 */
 	public void showInspectRecord(View view){
-		
-		
-		new Thread(new Runnable(){
-
-			@Override
-			public void run() {
-				try{
-					/*String jsonStr = "{'username':'"+username+"','password':'"+password+"'}";
-					
-					String encodeJsonStr = URLEncoder.encode(jsonStr,"UTF-8");
-					*/
-					String userJson = sharedPreference.getString("loginUser", "");
-					User user = JsonUtils.jsonStringToEntity(userJson, User.class);
-							
-					String responseJson = HttpUtil.androidHttpGetRequest("http://"+Global.connectionUrlLocation+"/jeeplus/mobille/showInspectorTask?userId="+user.getId());
-					/*
-					String userJson = new JSONObject(new JSONObject(responseJson).get("data").toString()).toString();
-					
-					user = JsonUtils.jsonStringToEntity(userJson, User.class);
-										
-					Editor editor = sharedPreference.edit();
-					editor.putString("loginUser", userJson);
-					*/
-					Intent intent = new Intent(CenterActivity.this,InspectRecordActivity.class);
-					//向下一个页面设置一点值	
-					intent.putExtra("loginUser", user);
-					
-					startActivity(intent);
-				}catch(Exception e){
-					e.printStackTrace();
-				}
-			}
-		}).start();
-		
-		
+		Intent intent = new Intent(CenterActivity.this,InspectRecordActivity.class);
+		startActivity(intent);
 	}
 	
 	/**
@@ -125,10 +96,44 @@ private ImageView personface;  //人头像的图片
 	 * @param view
 	 */
 	public void inspectTask(View view){
+		new Thread(new Runnable(){
+
+			@Override
+			public void run() {
+				try{
+					/*String jsonStr = "{'username':'"+username+"','password':'"+password+"'}";
+					
+					String encodeJsonStr = URLEncoder.encode(jsonStr,"UTF-8");
+					*/
+					SharedPreferences preference=getSharedPreferences("tangwukks", Context.MODE_PRIVATE);
+					String userJson = preference.getString("loginUser", "");
+					
+					User user = JsonUtils.jsonStringToEntity(userJson, User.class);
+							
+					String responseJson = HttpUtil.androidHttpGetRequest("http://"+Global.connectionUrlLocation+"/jeeplus/mobille/showInspectorTask?userId="+user.getId());
+					
+					System.out.println(responseJson);
+					
+					Intent intent = new Intent(CenterActivity.this,InspectTaskActivity.class);
+					
+					startActivity(intent);
+					
+					/*
+					String userJson = new JSONObject(new JSONObject(responseJson).get("data").toString()).toString();
+					
+					user = JsonUtils.jsonStringToEntity(userJson, User.class);
+										
+					Editor editor = sharedPreference.edit();
+					editor.putString("loginUser", userJson);
+					*/
+					
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+			}
+		}).start();
 		
 		
-		Intent intent = new Intent(CenterActivity.this,InspectTaskActivity.class);
-		startActivity(intent);
 	}
 	
 	/**

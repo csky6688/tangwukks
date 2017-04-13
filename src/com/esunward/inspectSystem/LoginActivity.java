@@ -84,8 +84,9 @@ public class LoginActivity extends BaseActivity {
 					
 					User user = JsonUtils.jsonStringToEntity(userJson, User.class);
 										
-					Editor editor = sharedPreference.edit();
+					Editor editor = getSharedPreferences("tangwukks", Context.MODE_PRIVATE).edit();
 					editor.putString("loginUser", userJson);
+					editor.commit();
 					
 					Intent intent = new Intent(LoginActivity.this,CenterActivity.class);
 					intent.putExtra("loginUser", user);
